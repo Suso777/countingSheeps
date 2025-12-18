@@ -48,3 +48,41 @@ button:hover {
   border-radius: 6px;
   margin: 6px 0;
 }
+
+
+
+.container {
+  max-width: 600px;
+  padding: 2rem;
+  margin: 1rem;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+  .container {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  button {
+    width: 100%;
+    margin: 0.3rem 0;
+  }
+  .output {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}

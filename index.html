@@ -1,5 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Conteo de Ovejas</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Conteo de Ovejas</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🐑 Ovejas vs Lobos 🐺</h1>
+      <p>
+        Los <strong>true</strong> son ovejas, los <strong>false</strong> son
+        lobos.
+      </p>
+
+      <button onclick="runTests()">Ejecutar Tests</button>
+      <button onclick="clearOutput()">Limpiar</button>
+
+      <div class="output" id="output"></div>
+    </div>
+
+    <script>
+      function countSheeps(list) {
+        const sheepCount = list.reduce(
+          (acc, item) => acc + (item === true ? 1 : 0),
+          0
+        );
+        if (sheepCount === 0) {
+          return "UPS!!! Wolfs eaten Sheeps";
+        }
+        return `There are ${sheepCount} sheep in total`;
+      }
+
+      const list1 = [
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true,
+      ];
+      const list2 = [false, false, false];
+
+      function runTests() {
+        const out1 = countSheeps(list1);
+        const out2 = countSheeps(list2);
+
+        console.log(out1);
+        console.log(out2);
+
+        print(out1);
+        print(out2);
+      }
+
+      function print(text) {
+        const el = document.createElement("div");
+        el.className = "line";
+        el.textContent = text;
+        document.getElementById("output").appendChild(el);
+      }
+
+      function clearOutput() {
+        document.getElementById("output").innerHTML = "";
+        console.clear();
+      }
+    </script>
+  </body>
+</html>
